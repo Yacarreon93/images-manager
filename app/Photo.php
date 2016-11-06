@@ -22,4 +22,9 @@ class Photo extends Model {
 	 */
 	protected $fillable = ['id', 'name', 'description', 'path', 'album_id'];
 
+	public function album() 
+	{
+		return $this->belongsTo('ImagesManager/Album');
+	}
+
 }
