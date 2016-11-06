@@ -22,4 +22,14 @@ class Album extends Model {
 	 */
 	protected $fillable = ['id', 'name', 'description', 'user_id'];
 
+	public function photos() 
+	{
+		return $this->hasMany('ImagesManager/Photo');
+	}
+
+	public function owner() 
+	{
+		return $this->belongsTo('ImagesManager/User');
+	}
+
 }
