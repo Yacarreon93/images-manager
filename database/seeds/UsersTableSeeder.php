@@ -20,11 +20,11 @@ class UsersTableSeeder extends Seeder {
 		{
 			User::create(
 			[
-				'name' 	=> 'user'.$i;
-				'email'	=> 'email'.$i;
-				'question' => 'question'.$i;
-				'answer' => 'answer'.$i;
-				'password' => bcrypt('password'.$i);				
+				'name' 	=> 'user'.$i,
+				'email'	=> 'email'.$i,
+				'question' => 'question'.$i,
+				'answer' => 'answer'.$i,
+				'password' => bcrypt('password'.$i)			
 			]);
 		}
 

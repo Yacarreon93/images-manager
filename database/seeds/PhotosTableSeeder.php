@@ -7,7 +7,7 @@ use ImagesManager\User;
 use ImagesManager\Album;
 use ImagesManager\Photo;
 
-class AlbumsTableSeeder extends Seeder {
+class PhotosTableSeeder extends Seeder {
 
 	/**
 	 * Run the database seeds.
@@ -16,17 +16,18 @@ class AlbumsTableSeeder extends Seeder {
 	 */
 	public function run()
 	{
-		$users = User::all();
-		foreach ($users as $user) 
+		$albums = Album::all();
+		foreach ($albums as $album) 
 		{
 			$qty = rand(0, 5);
 			for ($i = 0; $i < $qty; $i++) 
 			{ 
-				Album::create(
+				Photo::create(
 				[
-					'name' => 'album'.$i;
-					'description' => 'description'.$i;
-					'user_id' => $user->id;
+					'name' => 'photo'.$i,
+					'description' => 'description'.$i,
+					'path' => '/img/test.png',
+					'album_id' => $album->id
 				]);	
 			}
 		}

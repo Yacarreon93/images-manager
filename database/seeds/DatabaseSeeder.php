@@ -19,11 +19,11 @@ class DatabaseSeeder extends Seeder {
 		// Model::unguard();
 
 		// Doesn't check foreign keys to allow truncation
-		DB::statement('SET FOREIGN_KEY_CHECK = 0');
+		DB::statement('SET FOREIGN_KEY_CHECKS = 0');
 
 		Photo::truncate();
 		Album::truncate();
-		User::trucate();
+		User::truncate();
 
 		$this->call('UsersTableSeeder');
 		$this->call('AlbumsTableSeeder');
