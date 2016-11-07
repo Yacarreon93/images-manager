@@ -35,4 +35,8 @@ class PasswordController extends Controller {
 		$this->middleware('guest');
 	}
 
+	public function getRecover() {
+		return view('auth.recover');
+	}
+
 }
