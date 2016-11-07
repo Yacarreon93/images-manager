@@ -1,0 +1,35 @@
+<?php
+
+use Illuminate\Database\Seeder;
+use Illuminate\Database\Eloquent\Model;
+
+use ImagesManager\User;
+use ImagesManager\Album;
+use ImagesManager\Photo;
+
+class AlbumsTableSeeder extends Seeder {
+
+	/**
+	 * Run the database seeds.
+	 *
+	 * @return void
+	 */
+	public function run()
+	{
+		$users = User::all();
+		foreach ($users as $user) 
+		{
+			$qty = rand(0, 5);
+			for ($i = 0; $i < $qty; $i++) 
+			{ 
+				Album::create(
+				[
+					'name' => 'album'.$i;
+					'description' => 'description'.$i;
+					'user_id' => $user->id;
+				]);	
+			}
+		}
+	}
+
+}
