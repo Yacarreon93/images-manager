@@ -17,15 +17,17 @@ class AlbumsTableSeeder extends Seeder {
 	public function run()
 	{
 		$users = User::all();
+		$counter = 0;
 		foreach ($users as $user) 
 		{
-			$qty = rand(0, 5);
+			$qty = mt_rand(0, 5);
 			for ($i = 0; $i < $qty; $i++) 
 			{ 
+				$counter++;
 				Album::create(
 				[
-					'name' => 'album'.$i,
-					'description' => 'description'.$i,
+					'name' => 'album_'.$counter,
+					'description' => 'description_'.$counter,
 					'user_id' => $user->id
 				]);	
 			}

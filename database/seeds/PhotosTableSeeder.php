@@ -17,15 +17,17 @@ class PhotosTableSeeder extends Seeder {
 	public function run()
 	{
 		$albums = Album::all();
+		$counter = 0;
 		foreach ($albums as $album) 
 		{
-			$qty = rand(0, 5);
+			$qty = mt_rand(0, 5);
 			for ($i = 0; $i < $qty; $i++) 
 			{ 
+				$counter++;
 				Photo::create(
 				[
-					'name' => 'photo'.$i,
-					'description' => 'description'.$i,
+					'name' => 'photo_'.$counter,
+					'description' => 'description_'.$counter,
 					'path' => '/img/test.png',
 					'album_id' => $album->id
 				]);	

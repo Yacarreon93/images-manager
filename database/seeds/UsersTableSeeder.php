@@ -16,15 +16,17 @@ class UsersTableSeeder extends Seeder {
 	 */
 	public function run()
 	{
+		$counter = 0;
 		for ($i = 0; $i < 10; $i++) 
 		{
+			$counter++;
 			User::create(
 			[
-				'name' 	=> 'user'.$i,
-				'email'	=> 'email'.$i,
-				'question' => 'question'.$i,
-				'answer' => 'answer'.$i,
-				'password' => bcrypt('password'.$i)			
+				'name' 	=> 'user_'.$counter,
+				'email'	=> 'email_'.$counter,
+				'question' => 'question_'.$counter,
+				'answer' => 'answer_'.$counter,
+				'password' => bcrypt('password_'.$counter)			
 			]);
 		}
 
